@@ -520,15 +520,18 @@ class Tasks {
         for (int i = 0; i < array.length; i++){
             if (array[i] > 0 ){
                 count++;
-            }else if (array[i] < 0){
-                if (count > maxCount){
-                    maxCount = count;
-                }
+            }else {
+//                if (count > maxCount){
+//                    maxCount = count;
+//                }
                 count = 0;
+            }
+            if (count > maxCount){
+                maxCount = count;
             }
         }
         System.out.println();
-        System.out.println(count);
+        //System.out.println(count);
         System.out.println("Максимальный цикл положительных переменных = " + maxCount);
     }
 }
