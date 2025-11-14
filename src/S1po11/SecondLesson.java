@@ -1,3 +1,5 @@
+package S1po11;
+
 public class SecondLesson {
     public static void main(String[] args) {
         //1. ПриветствиеСоздай переменную с твоим именем и выведи: "Привет, [имя]!"

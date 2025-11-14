@@ -1,3 +1,5 @@
+package S1po11;
+
 public class FirstLesson {
     public static void main(String[] args) {
         //Сделаю задание при помощи циклов и обычных выводов.

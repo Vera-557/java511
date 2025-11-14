@@ -1,4 +1,4 @@
-import java.awt.font.FontRenderContext;
+package S1po11;
 
 public class LessonSeven {
     public static void main(String[] args) {

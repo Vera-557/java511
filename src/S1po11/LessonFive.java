@@ -1,3 +1,5 @@
+package S1po11;
+
 import java.util.Scanner;
 
 public class LessonFive {

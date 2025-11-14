@@ -1,3 +1,5 @@
+package S1po11;
+
 public class LessonTen {
     //Сортировка массива
     public static void main(String[] args) {
