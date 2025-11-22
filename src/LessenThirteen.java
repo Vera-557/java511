@@ -6,138 +6,133 @@ public class LessenThirteen {
     static Random random = new Random();
     static String name;
 
-//2 Компютер-Человек
-//Введите имя : Фарид
-//Фарид компютер загадал число : x . Постарайтесь найти его!  (x = 33)
-
-//Фарид введи число : 10
-//Больше
-
-//Фарид введи число : 40
-//Меньше
-
-//Фарид введи число : 33
-
-
-//Урра Фарид угадал число с 3 попыток
-
-
-/// ///////////////////////////////////////////////////////////////////////////////////////////
-
-//***
-
-// 1 - Start
-// 2 - Подсказки (off)
-// 3 - Попытки (off)
-// 4 - Диапазон (0-100)
-
-
-//if , switch , loop , peremennie , metod , array
-
-
     static void helloMenu(String name) {
-
-        System.out.println(name + ", выберите режим игры: 1 - компьютер загадывает число, 2 - вы загадываете число");
+        System.out.println(name + ", выберите режим игры: 1 - компьютер загадывает число, 2 - вы загадываете число, 3 - выход из игры");
         int choice = scanner.nextInt();
-        if (choice < 1 || choice > 2) {
-            helloMenu(name);
-        } else if (choice == 1) {
-            humanChoice();
-        } else {
+        while (choice != 1 && choice != 2 && choice != 3) {
+            choice = scanner.nextInt();
+        }
+        if (choice == 1) {
+            System.out.println("Компьютер загадывает число, вы отгадываете");
             System.out.println("Вы хотите получать подсказки? 1 - играть с подсказками, 2 - без подсказок");
             int choice2 = scanner.nextInt();
+            while (choice2 != 1 && choice2 != 2) {
+                choice2 = scanner.nextInt();
+            }
             if (choice2 == 1) {
                 computerChoice();
-            } else if (choice2 == 2) {
-                computerChoiceWithoutHelp();
-            } else helloMenu(name);
-
+            } else computerChoiceWithoutHelp();
+        }else if (choice == 2) {
+            humanChoice();
+        }else {
+            System.out.println("До свидания!");
+            return;
         }
     }
-
-    static int randomNum() {
-        return random.nextInt(1, 101);
+    static char askPlayAgain() {
+        System.out.println("Сыграем еще раз? (y/д = да, любой другой символ = нет)");
+        return scanner.next().toLowerCase().charAt(0);
     }
-
     static void computerChoice() {
-        char yesOrNo;
+        char ifPlay;
         do {
             int count = 1;
             System.out.println("Компьютер загадывает число от 1  до 100");
-            int computer = randomNum();
-            System.out.println("Введите предполагаемое число, у вас 5 попыток:\n" + count + " попытка");
-            int answer = scanner.nextInt();
+            int computer = random.nextInt(1,101);
+
+            System.out.println("Введите предполагаемое число, у вас 5 попыток: " + count + " попытка");
+            int answer;
             while (count < 5) {
+                answer = scanner.nextInt();
+                if (answer < 1 || answer > 100) {
+                    System.out.println("Число должно быть от 1 до 100!");
+                    continue;
+                }
+                count ++;
                 if (answer > computer) {
-                    ++count;
                     System.out.println("Загаданное число меньше " + count + " попытка");
-                    answer = scanner.nextInt();
+
                 } else if (answer < computer) {
-                    ++count;
                     System.out.println("Загаданное число больше " + count + " попытка");
-                    answer = scanner.nextInt();
+
                 } else {
-                    System.out.println(name + "Вы угадали! " + answer + " = " + computer);
+                    System.out.println(name + " Вы угадали! " + answer + " = " + computer);
                     break;
                 }
                 if (count == 5) System.out.println(name + " Вы проиграли");
             }
-            System.out.println("Сыграем еще раз? \n - y/д = да");
-            yesOrNo = scanner.next().charAt(0);
-        } while (yesOrNo == 'y' || yesOrNo == 'д');
+            ifPlay = askPlayAgain();
+        } while (ifPlay == 'y' || ifPlay == 'д');
 
     }
 
     static void computerChoiceWithoutHelp() {
-        char yesOrNo;
+        char ifPlay;
         do {
             int count = 1;
             System.out.println("Компьютер загадывает число от 1  до 100");
-            int computer = randomNum();
-            System.out.println("Введите предполагаемое число, у вас 5 попыток:\n" + count + " попытка");
-            int answer = scanner.nextInt();
+            int computer = random.nextInt(1,101);
+
+            System.out.println("Введите предполагаемое число, у вас 5 попыток: " + count + " попытка");
+            int answer;
             while (count < 5) {
+                answer = scanner.nextInt();
+                if (answer < 1 || answer > 100) {
+                    System.out.println("Число должно быть от 1 до 100!");
+                    continue;
+                }
+                count ++;
                 if (answer > computer) {
-                    ++count;
-                    System.out.println("Нет, не угадали " + count + " попытка");
-                    answer = scanner.nextInt();
+                    System.out.println("Не угадали! " + count + " попытка");
+
                 } else if (answer < computer) {
-                    ++count;
-                    System.out.println("Нет, не угадали " + count + " попытка");
-                    answer = scanner.nextInt();
+                    System.out.println("Не угадали! " + count + " попытка");
+
                 } else {
-                    System.out.println("Вы угадали! " + answer + " = " + computer);
+                    System.out.println(name + ", Вы угадали! " + answer + " = " + computer);
                     break;
                 }
-                if (count == 5) System.out.println("Вы проиграли");
+                if (count == 5) System.out.println(name + " Вы проиграли");
             }
-            System.out.println("Сыграем еще раз? \n - y/д = да");
-            yesOrNo = scanner.next().charAt(0);
-        } while (yesOrNo == 'y' || yesOrNo == 'д');
+            ifPlay = askPlayAgain();
+        } while (ifPlay == 'y' || ifPlay == 'д');
 
-    }
-
-    public static void gameMenu() {
-        System.out.println("Хотите изменить режим игры? 1 - да, 2 - нет");
-        int choice = scanner.nextInt();
-        while (choice < 1 || choice > 2) {
-            System.out.println("Хотите изменить режим игры? 1 - да, 2 - нет");
-            choice = scanner.nextInt();
-            if (choice == 1) {
-                helloMenu(name);
-            }
-        }
     }
 
     public static void humanChoice() {
-        System.out.println("Загадайте число от 1 до 100");
-        int userNum = scanner.nextInt();
-        if (userNum < 1 || userNum > 100) {
-            System.out.println("Вы вышли за указанный диапазон. Число от 1 до 100");
-            humanChoice();
-        }
-        System.out.println("Компьютер даёт ответ:");
-
+        char ifPlay;
+        do {
+            int min = 1;
+            int max = 100;
+            System.out.println(name + ", Загадайте число от 1 до 100");
+            int userNum = scanner.nextInt();
+            int count = 0;
+            while (count < 5) {
+                ++count;
+                int computerNum = random.nextInt(max - min + 1) + min;
+                System.out.println("Компьютер предлагает число " + computerNum);
+                if (computerNum == userNum) {
+                    System.out.println("Компьютер угадал!" + computerNum + " = " + userNum);
+                    System.out.println("Использовано " + count + " попыток");
+                    return;
+                } else {
+                    int help;
+                    do {
+                        System.out.println("Ваше число больше? - 1 или меньше? - 2?");
+                        help = scanner.nextInt();
+                    } while (help != 1 && help != 2);
+                    if (help == 1) {
+                        System.out.println("Вы говорите, что нужно больше");
+                        min = computerNum + 1;
+                    } else{
+                        System.out.println("Вы говорите, что нужно меньше");
+                        max = computerNum - 1;
+                    }
+                }
+            }
+            System.out.println("Компьютер проиграл");
+            ifPlay = askPlayAgain();
+        } while (ifPlay == 'y' || ifPlay == 'д');
     }
 
     public static void main(String[] args) {
