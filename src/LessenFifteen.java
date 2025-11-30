@@ -46,15 +46,13 @@ public static char[] substring(char[] array, int startIndex, int endIndex) {
             return false;
         }
         for (int i = 0; i < str1.length; i++) {
-            char c1 = str1[i];
-            char c2 = str2[i];
-            if (c1 >= 65 && c1 <= 90) {
-                c1 += 32;
+            if (str1[i] >= 65 && str1[i] <= 90) {
+                str1[i] += 32;
             }
-            if (c2 >= 65 && c2 <= 90) {
-                c2 += 32;
+            if (str2[i] >= 65 && str2[i] <= 90) {
+                str2[i] += 32;
             }
-            if (c1 != c2) {
+            if (str1[i] != str2[i]) {
                 return false;
             }
         }
