@@ -1,4 +1,4 @@
-public class LesselForteen {
+public class LessonFourteen {
     //Реализация методов строк
     public class HomeWork {
         public static void main(String[] args) {

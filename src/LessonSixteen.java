@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class LessenSixteen {
+public class LessonSixteen {
 //Задача 1: Деление на ноль
 //Создайте метод safeDivision(int a, int b), который делит два числа и обрабатывает деление на ноль через try-catch.
 // Метод должен возвращать результат деления или выводить сообщение об ошибке и возвращать 0.

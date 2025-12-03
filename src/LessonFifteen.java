@@ -1,4 +1,4 @@
-public class LessenFifteen {
+public class LessonFifteen {
 //реализация методов строк 2 часть
 // concat
 // equals
