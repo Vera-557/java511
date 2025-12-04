@@ -1,3 +1,5 @@
+package S12po16;
+
 public class LessonFifteen {
 //реализация методов строк 2 часть
 // concat

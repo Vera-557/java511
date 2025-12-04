@@ -1,3 +1,5 @@
+package S12po16;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

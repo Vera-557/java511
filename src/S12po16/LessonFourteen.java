@@ -1,3 +1,5 @@
+package S12po16;
+
 public class LessonFourteen {
     //Реализация методов строк
     public static void main(String[] args) {
