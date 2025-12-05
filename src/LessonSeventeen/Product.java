@@ -5,7 +5,6 @@ public class Product {
     int price;
     int quantity;
     String category;
-    //Создайте конструкторы с делегированием (минимум 3 конструктора)
 
     public Product(String name, int price, int quantity, String category) {
         this.name = name;
@@ -17,9 +16,11 @@ public class Product {
     Product(String name, String category){
         this(name,0,0, category);
     }
+
     Product(String name){
         this(name,0,0, "Default");
     }
+
    int getTotalPrice(int price, int quantity){
        return price + quantity;
    }
