@@ -15,10 +15,6 @@ public class Country {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getPopulation() {
         return population;
     }
@@ -43,7 +39,7 @@ public class Country {
         this.capital = capital;
     }
 
-    public boolean isHaveSea() {
+    public boolean getHaveSea() {
         return haveSea;
     }
 
