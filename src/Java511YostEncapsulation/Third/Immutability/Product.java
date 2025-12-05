@@ -3,7 +3,7 @@ package Java511YostEncapsulation.Third.Immutability;
 public class Product {
     private final String name;
     private int price;
-    private String barCode;
+    private final String barCode;
 
     public Product(String name, String barCode) {
         this.name = name;

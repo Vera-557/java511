@@ -10,6 +10,10 @@ public class Country {
     Country(String name){
         this.name = name;
     }
+    // по условию нужны сеттеры всех полей, хоть мы будем это поле задавать через конструктор
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
