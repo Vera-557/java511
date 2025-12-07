@@ -143,8 +143,12 @@ public static void main(String[] args) throws IllegalArgumentException {
     System.out.println();
     System.out.println("\t\t\t₍˄·͈༝·͈˄₎◞ ̑̑♥♥ Задание 5");
     System.out.println("Создайте метод calculate(double a, double b, char operation), который выполняет арифметические операции (+, -, *, /).\nОбработайте деление на ноль. Если передана неизвестная операция (например, '%'), бросьте исключение IllegalArgumentException");
-    System.out.println("Результат метода: " + calculate(7,0,'/'));
-    System.out.println();
+    try {
+        System.out.println("Результат метода: " + calculate(7, 0, 'щ'));
+        System.out.println();
+    }catch (IllegalArgumentException e){
+        System.out.println("Ошибка: " + e.getMessage());
+    }
     System.out.println("\t\t\t₍˄·͈༝·͈˄₎◞ ̑̑♥♥ Задание 6");
     System.out.println("Создайте метод validateAge(int age), который проверяет корректность возраста (должен быть от 0 до 150). Если возраст\nотрицательный или больше 150, бросьте IllegalArgumentException с соответствующим сообщением. В методе main обработайте\n это исключение и выведите сообщение об ошибке.");
     try {
