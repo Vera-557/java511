@@ -10,10 +10,10 @@ public class BankCard {
 //Создайте метод withdraw(double amount) для снятия (проверяйте достаточно ли денег)
 //Создайте метод transfer(BankCard recipient, double amount) для перевода денег на другую карту
 //В main создайте 3 карты и проведите операции между ними
-    private String cardNumber;
-    private String ownerName;
+    private final String cardNumber;
+    private final String ownerName;
     private double balance;
-    private String expiryDate;
+    private final String expiryDate;
 
     public BankCard(String cardNumber, String ownerName, double balance, String expiryDate) {
         this.cardNumber = cardNumber;
@@ -29,6 +29,7 @@ public class BankCard {
     public BankCard(String cardNumber, String ownerName) {
         this(cardNumber, ownerName, 0.0, "12/28");
     }
+
     public void deposit(double amount) {
         if (amount <= 0) {
             System.out.println("Сумма для пополнения должна быть больше 0");
@@ -38,6 +39,7 @@ public class BankCard {
         System.out.println("На карту " + cardNumber + " успешно зачислено " + amount + " руб.");
         System.out.println("Новый баланс: " + balance + " руб.");
     }
+
     public void withdraw(double amount) {
         if (amount <= 0) {
             System.out.println("Сумма для снятия должна быть больше 0");
@@ -84,6 +86,7 @@ public class BankCard {
         System.out.println("Ваш новый баланс: " + this.balance + " руб.");
         System.out.println("Баланс получателя: " + recipient.balance + " руб.");
     }
+
     public String getCardNumber() {
         return cardNumber;
     }
@@ -109,8 +112,8 @@ public class BankCard {
         BankCard card1 = new BankCard("1234-5678-9012-3456", "Иван Петров", 50000.0, "08/25");
         BankCard card2 = new BankCard("9876-5432-1098-7654", "Мария Сидорова", "12/26");
         BankCard card3 = new BankCard("1111-2222-3333-4444", "Алексей Иванов");
-        BankCard [] array = {card1,card2,card3};
-        for (BankCard bankCard : array){
+        BankCard[] array = {card1, card2, card3};
+        for (BankCard bankCard : array) {
             System.out.println(bankCard.toString());
         }
         System.out.println("\n=== ОПЕРАЦИИ ПОПОЛНЕНИЯ ===\n");
@@ -123,8 +126,8 @@ public class BankCard {
 
         System.out.println();
 
-        BankCard [] array2 = {card1,card2,card3};
-        for (BankCard bankCard : array2){
+        BankCard[] array2 = {card1, card2, card3};
+        for (BankCard bankCard : array2) {
             System.out.println(bankCard.toString());
         }
         System.out.println("\n=== ОПЕРАЦИИ ПЕРЕВОДОВ ===\n");
@@ -132,8 +135,8 @@ public class BankCard {
         card2.transfer(card3, 8000);
 
         System.out.println();
-        BankCard [] array3 = {card1,card2,card3};
-        for (BankCard bankCard : array3){
+        BankCard[] array3 = {card1, card2, card3};
+        for (BankCard bankCard : array3) {
             System.out.println(bankCard.toString());
         }
     }
