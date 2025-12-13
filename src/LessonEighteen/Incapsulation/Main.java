@@ -34,6 +34,24 @@ public class Main {
             System.out.println(e.getMessage());
         }
         System.out.println("Задание 3: Книга");
+        try{
+            Book book1 = new Book("Гоголь Н.В.", "Вечера на хуторе близ Диканьки", 720, 542.50);
+            Book book2 = new Book("Булгаков М.А.", "Собачье сердце", 138, 324.20);
+            System.out.println(book1 +"\n" + book2);
+            book2.setPrice(-5);
+            System.out.println(book1 +"\n" + book2);
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Задание 4: Прямоугольник");
+        try {
+            Rectangle rectangle = new Rectangle(100,150);
+            System.out.println(rectangle);
+            System.out.println("Площадь прямоугольника = "+rectangle.getArea() + ", периметр = " + rectangle.getPerimeter());
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Задание 5: Пароль");
 
     }
 
