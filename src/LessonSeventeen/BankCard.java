@@ -112,7 +112,7 @@ public class BankCard {
         BankCard card1 = new BankCard("1234-5678-9012-3456", "Иван Петров", 50000.0, "08/25");
         BankCard card2 = new BankCard("9876-5432-1098-7654", "Мария Сидорова", "12/26");
         BankCard card3 = new BankCard("1111-2222-3333-4444", "Алексей Иванов");
-        BankCard[] array = {card1, card2, card3};
+        BankCard[]  array = {card1, card2, card3};
         for (BankCard bankCard : array) {
             System.out.println(bankCard.toString());
         }

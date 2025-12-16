@@ -52,7 +52,10 @@ public class Main {
             System.out.println(e.getMessage());
         }
         System.out.println("Задание 5: Пароль");
-
+        Password d = new Password();
+        d.setPassword("12345678");
+        d.setPassword("12345678");
+        System.out.println("Пароли совпадают? " + d.passwordChecker("12345678"));
     }
 
 }
