@@ -18,7 +18,7 @@ public class Main {
         }
         //Я не понимаю как правильно оформлять блоки трай кэтч - что надо в них писать, что не надо.
         //Как это должно быть грамотно?
-        System.out.println("Задание 2: Студент");
+        System.out.println("\nЗадание 2: Студент");
         try{
             Student student1 = new Student();
             Student student2 = new Student();
@@ -33,7 +33,7 @@ public class Main {
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         }
-        System.out.println("Задание 3: Книга");
+        System.out.println("\nЗадание 3: Книга");
         try{
             Book book1 = new Book("Гоголь Н.В.", "Вечера на хуторе близ Диканьки", 720, 542.50);
             Book book2 = new Book("Булгаков М.А.", "Собачье сердце", 138, 324.20);
@@ -43,7 +43,7 @@ public class Main {
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         }
-        System.out.println("Задание 4: Прямоугольник");
+        System.out.println("\nЗадание 4: Прямоугольник");
         try {
             Rectangle rectangle = new Rectangle(100,150);
             System.out.println(rectangle);
@@ -51,11 +51,12 @@ public class Main {
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         }
-        System.out.println("Задание 5: Пароль");
+        System.out.println("\nЗадание 5: Пароль");
         Password d = new Password();
         d.setPassword("12345678");
         d.setPassword("12345678");
         System.out.println("Пароли совпадают? " + d.passwordChecker("12345678"));
+
     }
 
 }
