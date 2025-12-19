@@ -47,7 +47,7 @@ public abstract class Employee {
     }
 
     public void setBaseSalary(double baseSalary) {
-        if (baseSalary > 10000){
+        if (baseSalary >= 10000){
         this.baseSalary = baseSalary;}
     }
 
