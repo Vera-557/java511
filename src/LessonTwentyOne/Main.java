@@ -2,6 +2,7 @@ package LessonTwentyOne;
 
 import LessonTwentyOne.Bank.CurrentAccount;
 import LessonTwentyOne.Bank.SavingsAccount;
+import LessonTwentyOne.Employee.Developer;
 import LessonTwentyOne.Employee.Employee;
 import LessonTwentyOne.Employee.Manager;
 import LessonTwentyOne.Transport.Boat;
@@ -30,7 +31,12 @@ public class Main {
         }
         System.out.println("\n\n＼(٥⁀▽⁀ )／*:･ﾟ✧*:･ﾟ✧\t\t\t\tЗадание 3: Сотрудники компании\n");
         Employee manager = new Manager("Екатерина", 3504, 11000.00);
-        manager.calculateSalary();
-        System.out.println(manager.getInfo());
+        Employee developer = new Developer("Елизавета", 1456, 12000.00, 5);
+        Employee [] employees = {manager,developer};
+        for (Employee employee : employees){
+            employee.calculateSalary();
+            System.out.println(employee.getInfo());
+        }
+
     }
 }

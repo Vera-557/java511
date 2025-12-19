@@ -22,7 +22,7 @@ Intern - зарплата = baseSalary (без надбавок)
 public abstract class Employee {
     private String name;
     private int id;
-    private double baseSalary;
+    double baseSalary;
 
      Employee(String name, int id, double baseSalary) {
         setName(name);
