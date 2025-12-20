@@ -6,6 +6,9 @@ import LessonTwentyOne.Employee.Developer;
 import LessonTwentyOne.Employee.Employee;
 import LessonTwentyOne.Employee.Intern;
 import LessonTwentyOne.Employee.Manager;
+import LessonTwentyOne.PaySystems.Cash;
+import LessonTwentyOne.PaySystems.CreditCard;
+import LessonTwentyOne.PaySystems.PayPal;
 import LessonTwentyOne.Transport.Boat;
 import LessonTwentyOne.Transport.Car;
 import LessonTwentyOne.Transport.Transport;
@@ -13,7 +16,7 @@ import LessonTwentyOne.Transport.Transport;
 public class Main {
     public static void main(String[] args) {
         System.out.println("＼(٥⁀▽⁀ )／*:･ﾟ✧*:･ﾟ✧\t\t\t\tЗадание 1: Банковские счета\n");
-        CurrentAccount currentAccount = new CurrentAccount("45GYL4851IIOON",1000,"Ирина");
+        CurrentAccount currentAccount = new CurrentAccount("45GYL4851IIOON", 1000, "Ирина");
         System.out.println(currentAccount);
         currentAccount.deposit(5000);
         currentAccount.withdraw(500);
@@ -26,19 +29,33 @@ public class Main {
         System.out.println("\n\n＼(٥⁀▽⁀ )／*:･ﾟ✧*:･ﾟ✧\t\t\t\tЗадание 2: Транспорт\n");
         Transport car = new Car("VolksWagen", 2025, 350);
         Transport boat = new Boat("Хендай", 2020, 200);
-        Transport [] transports = {car,boat};
-        for (Transport transport : transports){
-            System.out.println( transport.displayInfo());
+        Transport[] transports = {car, boat};
+        for (Transport transport : transports) {
+            System.out.println(transport.displayInfo());
         }
         System.out.println("\n\n＼(٥⁀▽⁀ )／*:･ﾟ✧*:･ﾟ✧\t\t\t\tЗадание 3: Сотрудники компании\n");
         Employee manager = new Manager("Екатерина", 3504, 11000.00);
         Employee developer = new Developer("Елизавета", 1456, 12000.00, 5);
-        Employee intern = new Intern("Константин", 573,10000.0);
-        Employee [] employees = {manager,developer, intern};
-        for (Employee employee : employees){
+        Employee intern = new Intern("Константин", 573, 10000.0);
+        Employee[] employees = {manager, developer, intern};
+        for (Employee employee : employees) {
             employee.calculateSalary();
             System.out.println(employee.getInfo());
         }
+        System.out.println("\n\n＼(٥⁀▽⁀ )／*:･ﾟ✧*:･ﾟ✧\t\t\t\tЗадание Задание 4: Платежные системы\n");
+        CreditCard creditCard = new CreditCard();
+        PayPal payPal = new PayPal();
+        creditCard.setBalance(10000);
+        payPal.setBalance(100);
+        System.out.println("Кредитная карта. Баланс: " + creditCard.getBalance() + ", \nснять сумму: " + creditCard.processPayment(500) + ", \nвернуть средства: " + creditCard.refundPayment(100.0));
+        try {
+            System.out.println("Пэйпол. Баланс: " + payPal.getBalance() + ", \nплатёж: " + payPal.processPayment(50) + ": снять сумму: " + payPal.getAmount() + ", \nвернуть средства: " + payPal.refundPayment(50.0));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+        Cash cash = new Cash();
+        cash.setBalance(1000);
+        System.out.println("Наличные в кошельке. Баланс: " + cash.getBalance() + ", \nкупить товар: " + cash.processPayment(1100) + ", \nвернуть деньги: " + cash.refundPayment(100.0));
 
     }
 }
