@@ -5,6 +5,9 @@ import LessonTwentyOne.Bank.SavingsAccount;
 import LessonTwentyOne.Controllable.Fan;
 import LessonTwentyOne.Controllable.Light;
 import LessonTwentyOne.Controllable.SmartTV;
+import LessonTwentyOne.DataStorage.CloudStorage;
+import LessonTwentyOne.DataStorage.DatabaseStorage;
+import LessonTwentyOne.DataStorage.FileStorage;
 import LessonTwentyOne.Employee.Developer;
 import LessonTwentyOne.Employee.Employee;
 import LessonTwentyOne.Employee.Intern;
@@ -12,6 +15,7 @@ import LessonTwentyOne.Employee.Manager;
 import LessonTwentyOne.PaySystems.Cash;
 import LessonTwentyOne.PaySystems.CreditCard;
 import LessonTwentyOne.PaySystems.PayPal;
+import LessonTwentyOne.PaySystems.Payable;
 import LessonTwentyOne.Transport.Boat;
 import LessonTwentyOne.Transport.Car;
 import LessonTwentyOne.Transport.Transport;
@@ -59,6 +63,10 @@ public class Main {
         Cash cash = new Cash();
         cash.setBalance(1000);
         System.out.println("Наличные в кошельке. Баланс: " + cash.getBalance() + ", \nкупить товар: " + cash.processPayment(1100) + ", \nвернуть деньги: " + cash.refundPayment(100.0));
+        Payable [] payable ={creditCard, payPal, cash};
+        for (Payable payable1 : payable){
+            payable1.printReceipt();
+        }
         System.out.println("\n\n＼(٥⁀▽⁀ )／*:･ﾟ✧*:･ﾟ✧\t\t\t\tЗадание Задание 5: Умный дом\n");
         Fan fan = new Fan();
         fan.turnOn();
@@ -79,5 +87,18 @@ public class Main {
         System.out.println(smartTV.getBrightness());
         smartTV.turnOff();
         smartTV.getStatus();
+        System.out.println("\n\n＼(٥⁀▽⁀ )／*:･ﾟ✧*:･ﾟ✧\t\t\t\tЗадание Задание 6: Хранилища данных\n");
+        FileStorage fileStorage = new FileStorage();
+        fileStorage.save("Информационна строка");
+        System.out.println(fileStorage.load());
+        System.out.println(fileStorage.delete() + fileStorage.load());
+        CloudStorage cloudStorage = new CloudStorage();
+        cloudStorage.save("Фотографии и видео в облаке");
+        System.out.println(cloudStorage.load());
+        System.out.println(cloudStorage.delete() + cloudStorage.load());
+        DatabaseStorage databaseStorage = new DatabaseStorage();
+        databaseStorage.save("Здесь адрес базы данных");
+        System.out.println(databaseStorage.load());
+        System.out.println(databaseStorage.delete() + databaseStorage.load());
     }
 }
