@@ -2,6 +2,9 @@ package LessonTwentyOne;
 
 import LessonTwentyOne.Bank.CurrentAccount;
 import LessonTwentyOne.Bank.SavingsAccount;
+import LessonTwentyOne.Controllable.Fan;
+import LessonTwentyOne.Controllable.Light;
+import LessonTwentyOne.Controllable.SmartTV;
 import LessonTwentyOne.Employee.Developer;
 import LessonTwentyOne.Employee.Employee;
 import LessonTwentyOne.Employee.Intern;
@@ -56,6 +59,25 @@ public class Main {
         Cash cash = new Cash();
         cash.setBalance(1000);
         System.out.println("Наличные в кошельке. Баланс: " + cash.getBalance() + ", \nкупить товар: " + cash.processPayment(1100) + ", \nвернуть деньги: " + cash.refundPayment(100.0));
-
+        System.out.println("\n\n＼(٥⁀▽⁀ )／*:･ﾟ✧*:･ﾟ✧\t\t\t\tЗадание Задание 5: Умный дом\n");
+        Fan fan = new Fan();
+        fan.turnOn();
+        fan.getStatus();
+        fan.turnOff();
+        fan.getStatus();
+        Light light = new Light();
+        light.turnOn();
+        light.setBrightness(3);
+        light.getStatus();
+        System.out.println(light.getBrightness());
+        light.turnOff();
+        light.getStatus();
+        SmartTV smartTV = new SmartTV();
+        smartTV.turnOn();
+        smartTV.setBrightness(45);
+        smartTV.getStatus();
+        System.out.println(smartTV.getBrightness());
+        smartTV.turnOff();
+        smartTV.getStatus();
     }
 }
