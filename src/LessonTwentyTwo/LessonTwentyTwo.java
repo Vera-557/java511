@@ -30,16 +30,20 @@ public class LessonTwentyTwo {
         size++;
         arr = tmp;
     }
-    public void addStart(int num) {
-        int[] tmp = new int[size + 1];
-        for (int i = 0; i < size; i++) {
-            tmp[i] = arr[i];
-        }
 
-        tmp[size] = num;
+    public void addStart(int num) {
+        int[] tmp = new int[size + 1];//мы каждый раз создаем новый массив когда нам нужно увеличить его лишь на единицу
+        for (int i = 0; i < size; i++) {//тем самым мы забиваем память бессмысленными оъектами, коотрые будет чистить ГК
+            tmp[i] = arr[i];//на мой взгляд было бы проще использовать реализацию арэй листа, где массив увеличивается на 0,5 от его размера
+        }
+        tmp[0] = num;
+        for (int i = 0; i < size; i++){
+            tmp[i + 1] = arr[i];
+        }
         size++;
         arr = tmp;
     }
+
     public void print() {
         for (int i = 0; i < size; i++) {
             System.out.print(arr[i] + " ");

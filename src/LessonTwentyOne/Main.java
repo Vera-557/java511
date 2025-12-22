@@ -6,6 +6,7 @@ import LessonTwentyOne.Controllable.Fan;
 import LessonTwentyOne.Controllable.Light;
 import LessonTwentyOne.Controllable.SmartTV;
 import LessonTwentyOne.DataStorage.CloudStorage;
+import LessonTwentyOne.DataStorage.DataStorage;
 import LessonTwentyOne.DataStorage.DatabaseStorage;
 import LessonTwentyOne.DataStorage.FileStorage;
 import LessonTwentyOne.Employee.Developer;
@@ -100,5 +101,6 @@ public class Main {
         databaseStorage.save("Здесь адрес базы данных");
         System.out.println(databaseStorage.load());
         System.out.println(databaseStorage.delete() + databaseStorage.load());
+        DataStorage.getStorageType();
     }
 }

@@ -7,7 +7,7 @@ public interface DataStorage {
 
     String delete();
 
-    static String getStorageType() {
+    public static String getStorageType() {
         return "Data Storage System";
     }
 
