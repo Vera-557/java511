@@ -25,6 +25,7 @@ public class LessonTwentyThree {
     public  int get(int index){
         return arr[index];
     }
+    //Один лишний метод написала
     public  int getLast(int num){
         for (int i = arr.length-1; i >=0; i--){
             if (arr[i] == num){
@@ -32,6 +33,9 @@ public class LessonTwentyThree {
             }
         }
         return -1;
+    }
+    public  int getLast(){
+        return arr[arr.length - 1];
     }
     public  int lastIndexOf( int num){
         for (int i = arr.length-1; i>=0; i--){
