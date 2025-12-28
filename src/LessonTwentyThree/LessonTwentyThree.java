@@ -1,7 +1,7 @@
 package LessonTwentyThree;
 
 public class LessonTwentyThree {
-    //10   -    public  void reverse();
+    //10   +    public  void reverse();
 //11   +    public  boolean isEmpty();
 //12   +    public  int get(int index);
 //13   +    public  int indexOf(int num);
@@ -16,7 +16,13 @@ public class LessonTwentyThree {
         size = 0;
         arr = new int[size];
     }
-    public  void reverse(){}
+    public  void reverse(){
+        int [] tmp = new int[arr.length];
+        for (int i = arr.length-1, j =0; i > 0; i--, j++){
+           tmp[j]=arr[i];
+        }
+        arr=tmp;
+    }
     public  boolean isEmpty(){
         if (arr.length ==0){
             return true;
