@@ -1,10 +1,4 @@
 package LessonTwentyFour;
-/*
-Задание 5: Планеты и их масса
-Создай enum Planet с несколькими планетами (например, MERCURY, VENUS, EARTH).
-Добавь в него поле mass (масса) и конструктор для его инициализации.
-Напиши метод getMass(), возвращающий массу планеты.
- */
 public class EnumLesson {
     public static void main(String[] args) {
         System.out.println("\n\nજ⁀➴જ⁀➴જ⁀➴*ੈ\uD804༘⋆\uD83D\uDCA3\t\t\t\t\tЗадание 1:\n\n");

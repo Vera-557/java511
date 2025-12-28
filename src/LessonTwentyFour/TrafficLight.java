@@ -8,7 +8,7 @@ public enum TrafficLight {
     RED("Red"){
         @Override
         TrafficLight getNext(){
-            return GREEN;
+            return GREEN;//Или надо было вернуть стринг вместо объекта с названием? Не совсем поняла задание... если стринг, то так: GREEN.colour
         }
     },
     YELLOW("Yellow"){
