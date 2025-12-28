@@ -31,10 +31,10 @@ public enum Operation {
             return a / b;
         }
     };
-    final String apply;
+    final String option;
 
-    Operation(String apply) {
-        this.apply = apply;
+    Operation(String option) {
+        this.option = option;
     }
 
     abstract double apply(double a, double b);
