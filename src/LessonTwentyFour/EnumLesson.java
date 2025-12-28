@@ -24,5 +24,8 @@ public class EnumLesson {
         System.out.println(TrafficLight.RED.colour + " " +TrafficLight.RED.getNext());
         System.out.println(TrafficLight.YELLOW.colour + " " + TrafficLight.YELLOW.getNext());
         System.out.println("\n\nજ⁀➴જ⁀➴જ⁀➴*ੈ\uD804༘⋆\uD83D\uDCA3\t\t\t\t\tЗадание 5:\n\n");
+        System.out.println(Planet.MERCURY.planet + " вес = " + Planet.MERCURY.getMass());
+        System.out.println(Planet.VENUS.planet + " вес = " + Planet.VENUS.getMass());
+        System.out.println(Planet.EARTH.planet + " вес = " + Planet.EARTH.getMass());
     }
 }

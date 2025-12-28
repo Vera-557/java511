@@ -1,5 +1,7 @@
 package LessonTwentyFour;
 
+import static java.lang.Math.pow;
+
 /*
 Задание 5: Планеты и их масса
 Создай enum Planet с несколькими планетами (например, MERCURY, VENUS, EARTH).
@@ -7,27 +9,26 @@ package LessonTwentyFour;
 Напиши метод getMass(), возвращающий массу планеты.
  */
 public enum Planet {
-    MERCURY("Меркурий", 0) {
+    MERCURY("Меркурий", ( 3.3 * pow(10, 23))) {
         @Override
         double getMass() {
-            return 0;
+            return MERCURY.mass;
         }
     },
-    VENUS ("Венера", 0){
+    VENUS("Венера", (4.8675 * pow(10, 24))) {
         @Override
         double getMass() {
-            return 0;
+            return VENUS.mass;
         }
     },
-    EARTH("Земля", 0) {
+    EARTH("Земля", (5.9722 * pow(10, 24))) {
         @Override
         double getMass() {
-            return 0;
+            return EARTH.mass;
         }
     };
     final String planet;
-    final double mass;
-
+    private final double mass;
     abstract double getMass();
 
     Planet(String planet, double mass) {
