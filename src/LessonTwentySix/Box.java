@@ -2,6 +2,7 @@ package LessonTwentySix;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 /*
 1)      Задание 1: Класс Box (Коробка)
@@ -96,5 +97,17 @@ class Pair<F, S> {
 
     public S getSecond() {
         return second;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Pair<?, ?> pair = (Pair<?, ?>) o;
+        return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
     }
 }
