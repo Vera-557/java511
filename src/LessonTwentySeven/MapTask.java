@@ -28,13 +28,12 @@ import java.util.Map;
 public class MapTask {
     public static void main(String[] args) {
         Map<String, String[]> kart = new HashMap<>();
-        String[] fruits =  {"apple", "banana"};
+        String[] fruits = {"apple", "banana"};
         kart.put("fruits", fruits);
         String[] colours = {"red", "blue"};
         kart.put("colors", colours);
-        for(Map.Entry e : kart.entrySet())
-        {
-            System.out.println("Ключ: " + e.getKey()+", значение: "+ Arrays.toString((String[]) e.getValue()));
+        for (Map.Entry e : kart.entrySet()) {
+            System.out.println("Ключ: " + e.getKey() + ", значение: " + Arrays.toString((String[]) e.getValue()));
         }
         if (kart.containsKey("fruits")) {
             System.out.println("Fruits exist");
