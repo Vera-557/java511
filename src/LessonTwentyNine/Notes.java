@@ -50,6 +50,7 @@ public class Notes {
             return;
         }
         FileReader fileReader = new FileReader(file);
+        System.out.println("===================");
         char [] read = new char[10000];
         int count = fileReader.read(read);
         for(int i = 0; i < count; i++){
@@ -106,7 +107,7 @@ public class Notes {
                 } else System.out.println("Не правильный ввод");
             }
         }catch (IOException e){
-            System.out.println("Упс! Ошибочка вышла! Будь внимательнее");
+            System.out.println("Упс! Ошибочка вышла!");
         }
     }
 }
