@@ -141,27 +141,27 @@ public class InputOutput {
 
 //        File file = new File("C:\\Users\\f-abd\\Desktop\\9999999999999999999");
 
-//        file.mkdirs();           // sozdaet podpapki
-//        file.createNewFile();    // sozdaet file
-//        file.mkdir();            // sozdaet folder
-//        file.exists()            // suwestvuet li dannaya papka / file
-//        file.delete()            // udalit file ili papku esli tolko papka pusta
-//        file.isDirectory()       // danniy obyekt folder?
-//        file.isFile()            // danniy obyekt file?
-//        renameTo()               // peremestin , pereimenovat
-//        getName())               // vernut nazvanie file / folder
+//        file.mkdirs();           // создает подпапку
+//        file.createNewFile();    // создает file
+//        file.mkdir();            // создает folder
+//        file.exists()            // существует li dannaya papka / file
+//        file.delete()            // удалить file ili papku esli tolko papka pusta
+//        file.isDirectory()       // данный obyekt folder?
+//        file.isFile()            // данный obyekt file?
+//        renameTo()               // переместить , переименовать
+//        getName())               // вернуть nazvanie file / folder
 //        isHidden())              // file / folder skrit ili net
-//        isAbsolute()             // eto absolutniy put ili net
-//        canExecute()             // mojno vipolnit
-//        canRead()                // mojno scitat
-//        getAbsoluteFile()        // verni absolutniy put
-//        length()                 // razmer file / folder
+//        isAbsolute()             // это absolutniy put ili net
+//        canExecute()             // можно vipolnit
+//        canRead()                // можно scitat
+//        getAbsoluteFile()        // верни absolutniy put
+//        length()                 // размер file / folder
 //        getPath()                // put kotoriy bil propisan
 //        getAbsolutePath()        // polniy put
-//        getParent()              // Roditelskaya papka
-//        lastModified()           // Vremya posledneqo izmineniya
-//        list()                   // vernut spisok imen failov / papok
-//        listFiles()              // vernut  faili i papki
+//        getParent()              // родительская papka
+//        lastModified()           // время posledneqo izmineniya
+//        list()                   // вернуть spisok imen failov / papok
+//        listFiles()              // вернуть  faili i papki
 
 
 //        File folder = new File("text");
