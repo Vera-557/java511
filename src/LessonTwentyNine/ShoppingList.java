@@ -66,7 +66,6 @@ public class ShoppingList {
     }
 
     public void menu() {
-        ShoppingList shoppingList = new ShoppingList();
         System.out.println("Список покупок" +
                 "\n1 - добавить запись" +
                 "\n2 -  прочитать все покупки" +
@@ -79,16 +78,16 @@ public class ShoppingList {
                 input = scanner.nextInt();
                 switch (input) {
                     case 1:
-                        shoppingList.addProduct();
+                       addProduct();
                         break;
                     case 2:
-                        shoppingList.showList();
+                        showList();
                         break;
                     case 3:
-                        shoppingList.deleteAllList();
+                        deleteAllList();
                         break;
                     case 4:
-                        shoppingList.listCounter();
+                        listCounter();
                         break;
                     case 5:
                         System.exit(0);
