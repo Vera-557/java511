@@ -56,9 +56,9 @@ public class DayBook {
                 }
             }
         }
-        System.out.println("");
+        System.out.println();
     }
-    private void showLastFiveEntriesSimple() throws IOException {
+    private void showLastFiveEntries() throws IOException {
         if (!file.exists() || file.length() == 0) {
             System.out.println("Дневник пуст. Добавьте первую запись.");
             return;
@@ -110,14 +110,12 @@ public class DayBook {
         System.out.println("Поиск: " + keyword);
 
         boolean found = false;
-        int resultCount = 1;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (!line.trim().isEmpty() && line.toLowerCase().contains(keyword)) {
-                    System.out.println(resultCount + ". " + line);
-                    resultCount++;
+                    System.out.println( line);
                     found = true;
                 }
             }
@@ -130,17 +128,16 @@ public class DayBook {
     }
     public void start() {
         System.out.println("Добро пожаловать в Дневник:" +
-                "1 - Добавить запись" +
-                "2 - Показать последние 5 записей" +
-                "3 - Показать все записи" +
-                "4 - Найти запись по ключевому слову" +
-                "5 - Выход");
+                "\n1 - Добавить запись" +
+                "\n2 - Показать последние 5 записей" +
+                "\n3 - Показать все записи" +
+                "\n4 - Найти запись по ключевому слову" +
+                "\n5 - Выход");
 
         while (true) {
             try {
                 if (!scanner.hasNextInt()) {
                     System.out.println("Ошибка: введите число от 1 до 5!");
-                    scanner.next(); // очистка неверного ввода
                     continue;
                 }
 
@@ -151,7 +148,7 @@ public class DayBook {
                        add();
                         break;
                     case 2:
-                        showLastFiveEntriesSimple(); // или showLastFiveEntries()
+                        showLastFiveEntries();
                         break;
                     case 3:
                         showAllEntries();
@@ -160,7 +157,7 @@ public class DayBook {
                         searchByKeyword();
                         break;
                     case 5:
-                        System.out.println("До свидания! Ваши записи сохранены.");
+                        System.out.println("До свидания!");
                         scanner.close();
                         return;
                     default:
@@ -172,7 +169,6 @@ public class DayBook {
                 System.out.println("Ошибка работы с файлом: " + e.getMessage());
             } catch (Exception e) {
                 System.out.println("Ошибка: " + e.getMessage());
-                scanner.nextLine(); // очистка буфера
             }
         }
     }
