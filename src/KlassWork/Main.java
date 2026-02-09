@@ -1,4 +1,8 @@
-//package KlassWork;
+package KlassWork;
+
+import java.io.*;
+import java.util.Scanner;
+
 //
 //import java.io.*;
 //import java.util.*;
@@ -34,62 +38,64 @@
 //        }
 //    }
 //
-//    public class Main {
+    public class Main {
+
+
+//    public static Optional<String> getData() {
+//        String result = "Abdullayev";
+//        return Optional.ofNullable(result);
+//    }
+
+    public static void main(String[] args) {
+
+
+        /// ///////////////////////////////////////////////////////////////////////////////////////////
+        /// ///////////////////////////////////////////////////////////////////////////////////////////
+        //          //Терминальные методы
+        /// ///////////////////////////////////////////////////////////////////////////////////////////
+        /// forEach,collect,toArray,toList,reduce,min,max,
+        ///  anyMatch       -> true ( esli podxodit xotyabi odin element)
+        ///  allMatch       -> true ( vse podxodyat )
+        ///  noneMatch      -> true ( nikto ne podxodit )
+        ///  findFirst,findAny,sum,average,summaryStatistics
+        /// ///////////////////////////////////////////////////////////////////////////////////////////
+
+
+        Scanner sc = new Scanner(System.in);
+        //List<String> list = new ArrayList<>();
+
+        int totalMovies = 123;
+        for (int i = 1; i <= totalMovies; i++) {
+           // list.add("Movie #" + i);
+        }
+
+        int view = 10; // skolko filmov na 1 stranicu
+        int page = 5;  // kakaya stranica
+        int pageSize = 10; // skolko filmov na 1 stranicu
+
+        do {
+            sc = new Scanner(System.in);
+            for (int i = 1; i <= pageSize; i++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();  // Otobrazitsa vozmojnie stranici
+            page = sc.nextInt();
+            //choice
+
+//            list.stream().limit(10).forEach(System.out::println); // pecataet pravilniy diapazon
+
+            //
+        } while (true);
+
+
+    }
+}
+
+//        Optional<String> result = getData();
 //
-//
-////    public static Optional<String> getData() {
-////        String result = "Abdullayev";
-////        return Optional.ofNullable(result);
-////    }
-//
-//        public static void main(String[] args) {
-//
-//
-//            /// ///////////////////////////////////////////////////////////////////////////////////////////
-//            /// ///////////////////////////////////////////////////////////////////////////////////////////
-//            //          //Терминальные методы
-//            /// ///////////////////////////////////////////////////////////////////////////////////////////
-//            /// forEach,collect,toArray,toList,reduce,min,max,
-//            ///  anyMatch       -> true ( esli podxodit xotyabi odin element)
-//            ///  allMatch       -> true ( vse podxodyat )
-//            ///  noneMatch      -> true ( nikto ne podxodit )
-//            ///  findFirst,findAny,sum,average,summaryStatistics
-//            /// ///////////////////////////////////////////////////////////////////////////////////////////
-//
-//
-//            Scanner sc = new Scanner(System.in);
-//            List<String> list = new ArrayList<>();
-//
-//            int totalMovies = 123;
-//            for (int i = 1; i <= totalMovies; i++) {
-//                list.add("Movie #"+i);
-//            }
-//
-//            int view = 10; // skolko filmov na 1 stranicu
-//            int page = 5;  // kakaya stranica
-//            int pageSize = 10; // skolko filmov na 1 stranicu
-//
-//            do {
-//                sc = new Scanner(System.in);
-//                for(int i = 1; i <= pageSize; i++) {
-//                    System.out.print(i + " ");
-//                }
-//                System.out.println();  // Otobrazitsa vozmojnie stranici
-//                page = sc.nextInt();
-//                //choice
-//
-////            list.stream().limit(10).forEach(System.out::println); // pecataet pravilniy diapazon
-//
-//                //
-//            }while(true);
-//
-//
-//
-////        Optional<String> result = getData();
-////
-////        if (result.isPresent()) {
-////            System.out.println(result.get().length());
-////        }
+//        if (result.isPresent()) {
+//            System.out.println(result.get().length());
+//        }
 //
 //
 ////        List<Integer> list = Arrays.asList(2, 2, 32, 48, 80);
