@@ -8,49 +8,47 @@ public class LessonThertyOne {
     //Реализовать пагинацию
     public static void main(String[] args) {
 
-        List<String> movies = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         int totalMovies = 30;
 
         for (int i = 1; i <= totalMovies; i++) {
-            movies.add("Movie #" + i);
+            list.add("Movie #" + i);
         }
-        int filmsOnPage = 3;   // Сколько фильмов показывать на одной странице
-        int totalPages = 10;    // Всего страниц
+        int view = 3;   // Сколько фильмов показывать на одной странице
+        int pageSize = 10;    // Всего страниц
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== ПАГИНАЦИЯ ФИЛЬМОВ ===");
         System.out.println("Всего фильмов: " + totalMovies);
-        System.out.println("Фильмов на странице: " + filmsOnPage);
-        System.out.println("Всего страниц: " + totalPages);
+        System.out.println("Фильмов на странице: " + view);
+        System.out.println("Всего страниц: " + pageSize);
         System.out.println();
-        //Мне эти консоли напоминают времена, когда я училась в школе и мы пытались что-то печатать на бэйсик и паскале
-        //только мигающей каретки не хватает
-        while (true) {
+        do {
             System.out.println("Доступные страницы: 1 2 3 4 5 6 7 8 9 10");
             System.out.print("Введите номер страницы (1-10) или 0 для выхода:");
 
-            int pageNumber = scanner.nextInt();
-            if (pageNumber == 0) {
+            int page = scanner.nextInt();
+            if (page == 0) {
                 System.out.println("Выход.");
                 break;
             }
-            if (pageNumber < 1 || pageNumber > totalPages) {
-                System.out.println("Упс! Страницы " + pageNumber + " не существует.");
+            if (page < 1 || page > pageSize) {
+                System.out.println("Упс! Страницы " + page + " не существует.");
                 continue;
             }
-            int startIndex = (pageNumber - 1) * filmsOnPage;
+            int startIndex = (page - 1) * view;
 
-            System.out.println("СТРАНИЦА " + pageNumber);
-            for (int i = 0; i < filmsOnPage; i++) {
+            System.out.println("СТРАНИЦА " + page);
+            for (int i = 0; i < view; i++) {
                 int movieIndex = startIndex + i;
                 if (movieIndex < totalMovies) {
-                    System.out.println(movies.get(movieIndex));
+                    System.out.println(list.get(movieIndex));
                 }
             }
-        }
+            //list.stream().limit(10).forEach(System.out::println); // pecataet pravilniy diapazon  ------ Я не поняла -куда это?
+        }while (true);
     }
-    //я не поняла на сколько можно было модифиировать ваш предложенный код? ну пришлось немного изменить его, не знаю, правильно ли так...
 }
 /*
 int view = 3; // skolko filmov na 1 stranicu
