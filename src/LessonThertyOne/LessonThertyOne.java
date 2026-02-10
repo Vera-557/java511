@@ -46,6 +46,10 @@ public class LessonThertyOne {
                     System.out.println(list.get(movieIndex));
                 }
             }
+//            list.stream()
+//                    .skip(startIndex)          // пропускаем первые startIndex фильмов
+//                    .limit(view)               // берем только view фильмов
+//                    .forEach(System.out::println);
             //list.stream().limit(10).forEach(System.out::println); // pecataet pravilniy diapazon  ------ Я не поняла -куда это?
         }while (true);
     }
