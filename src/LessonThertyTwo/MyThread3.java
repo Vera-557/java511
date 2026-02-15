@@ -25,7 +25,21 @@ package LessonThertyTwo;
  */
 public class MyThread3 {
     public static void main(String[] args) {
-        System.out.println("Задача 3: Обратный отсчёт ⏱\uFE0F" +
+        System.out.println("Задача 3: Обратный отсчёт ⏱️" +
                 "\n---------------------------------------------------------");
+
+        Thread countdownThread = new Thread(() -> {
+            try {
+                for (int i = 5; i >= 1; i--) {
+                    System.out.println(i);
+                    Thread.sleep(1000);
+                }
+                System.out.println("Старт!");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        countdownThread.start();
     }
 }
